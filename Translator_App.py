@@ -11,6 +11,18 @@ Window.size = (500, 600)
 
 
 class TranslatorApp(MDApp):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.main_button2 = None
+        self.main_button = None
+        self.dropdown2 = None
+        self.dropdown1 = None
+        self.choice = None
+        self.translateButton = None
+        self.textInput2 = None
+        self.textInput = None
+        self.titleLabel = None
+
     def translate(self, instance):
         text = self.textInput.text
         if text == '':
@@ -27,7 +39,6 @@ class TranslatorApp(MDApp):
 
     def build(self):
         layout = MDRelativeLayout(md_bg_color=(173 / 255, 181 / 255, 189 / 255, 1))
-
 
         # Add your layout here
         self.titleLabel = Label(text='Translator App', font_name='Arial', font_size=30,
